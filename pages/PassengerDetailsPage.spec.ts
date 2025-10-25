@@ -12,7 +12,12 @@ export class PassengerDetails{
     readonly dobDayErrorMsg:Locator;
     readonly dobMnthErrorMsg:Locator;
     readonly dobYearErrorMsg:Locator;
+    readonly leadtitleErrorMsg:Locator;
+    readonly titleErrorMsg:Locator;
     readonly selCountry:Locator;
+    readonly dobErrorMsg:Locator;
+    readonly phoneErrorMsg:Locator;
+    readonly emailErrorMsg:Locator;
 
 
 constructor(page:Page){
@@ -27,7 +32,12 @@ constructor(page:Page){
     this.dobDayErrorMsg=page.locator("#paxInfoDobDay0__errorMessage");
     this.firstNameErrorMsg=page.locator("#paxInfoFirstName0__errorMessage");
     this.lastNameErrorMsg=page.locator("#paxInfoLastName0__errorMessage");
+    this.leadtitleErrorMsg=page.locator("//select[@id='paxInfoTitle0']/parent::div/following-sibling::span[contains(text(),'Please select a title.')]");
+    this.dobErrorMsg=page.locator('[aria-label="lead passenger DOB"] .inputs__error').filter({ hasText: 'Please use the format DD/MM/YYYY' })
+    this.titleErrorMsg=page.locator("//select[@id='paxInfoTitle1']/parent::div/following-sibling::span[contains(text(),'Please select a title.')]");
     this.selCountry=page.locator("#paxInfoCountry");
+    this.phoneErrorMsg=page.locator("#paxInfoTelephone__errorMessage");
+    this.emailErrorMsg=page.locator("paxInfoEmail__errorMessage");
 }
 
 async enterPassengerNameDetails(firstname:string,lastname:string,title:string){
