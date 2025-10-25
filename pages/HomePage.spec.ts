@@ -30,7 +30,7 @@ export class HomePage {
         this.incrementChild = page.locator("button[aria-label='nonAdults plus']");
         this.childAge = page.locator("#child-age");
         this.searchBtn = page.getByTestId("search-button")
-        this.dealAcceptBtn=this.page.getByRole('button',{name:'ALLOW'});
+        this.dealAcceptBtn=page.getByRole('button',{name:'ALLOW'});
     }
     /**
      * 
@@ -52,7 +52,9 @@ export class HomePage {
      * This method selects any available airport
      */
     async selectDepartureAirport() {
+        
         await this.departureAirportTxtBox.click();
+        await this.airportList.waitFor({ state: 'visible' });
         await this.airportList.first().click();
 
     }

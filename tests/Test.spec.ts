@@ -20,6 +20,7 @@ await page.getByTestId("search-button").click();
 
 await page.getByRole('button', { name: /accept|agree|allow all/i }).click();
 //await page.getByRole('button', { name: /continue/i }).first().click();
+//co//nst hotelcard= page.locator('.SearchResults__searchResultsLists', { hasText: '' });
 await page.getByTestId("continue-button").first().click();
 await page.locator("//span[contains(text(),'Dates & Flights')]").click();
 await page.locator("//button[contains(text(),'Continue')]").click();
