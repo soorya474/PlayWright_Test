@@ -34,8 +34,9 @@ await page.locator("#paxInfoDobMonth0").fill("11");
 await page.locator("paxInfoDobYear0").fill("2000");
 await page.locator("#paxInfoDobYear0__errorMessage").isVisible();
 await page.selectOption("#paxInfoCountry","AL");
-await page.locator("#paxInfoAddressLookup").click();
 
+await page.locator("//span[contains(text(),'Enter address manually')]").click();
+await page.locator("#paxInfoAddressLookup").fill("asdggggggg");
 
 
 
