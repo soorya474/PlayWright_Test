@@ -4,6 +4,7 @@ import { HolidaysPage } from "../pages/HolidaysPage.spec";
 import { HotelPage } from "../pages/HotelPage.spec";
 import { CustomiseHolidaysPage } from "../pages/CustomiseHolidayPage.spec";
 import { PassengerDetails } from "../pages/PassengerDetailsPage.spec";
+import { TestData } from "../testData/testData.spec";
 
 
 test('Login test',async({page})=>{
@@ -20,7 +21,7 @@ await home. clickOnAllowDeals();
 await home.selectDestination();
 await home.selDepartureDate();
 await home.selNoOfPersons();
-await home.selectChildAge("2");
+await home.selectChildAge(TestData.tc01.childAge);
 await home.clickOnSearchBtn();
 //await holPage.clickOnContinue();
 
