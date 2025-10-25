@@ -70,6 +70,13 @@ async selectCountry(country:string){
 
 }
 
+async clickOnContinuePay(){
+    await this.continuePayBtn.click();
+}
+async clickOnCheckBox(){
+    await this.infoCheckBox.check();
+}
+
 async valErrorMsgIsPresent(){
     await expect(this.leadtitleErrorMsg).toBeVisible();
     await expect(this.firstNameErrorMsg).toBeVisible();

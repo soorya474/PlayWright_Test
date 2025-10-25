@@ -14,7 +14,7 @@ export class HolidaysPage{
     }
 
 async clickOnContinue(){
-    await this.contBtn.click();
+    await this.contBtn.first().click();
 }
 
 
