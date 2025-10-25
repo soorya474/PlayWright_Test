@@ -20,7 +20,7 @@ await home.selDepartureDate();
 await home.selNoOfPersons();
 await home.selectChildAge("2");
 await home.clickOnSearchBtn();
-//await holPage.clickOnAnyHotel();
+await holPage.clickOnContinue();
 
 await hotelpg.clickOnContinueBtn();
 await custHols.clickOnContinueDetails();

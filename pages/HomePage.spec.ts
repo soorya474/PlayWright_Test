@@ -82,6 +82,7 @@ export class HomePage {
 
     }
     async clickOnAllowDeals(){
+        this.page.pause()
         await this.dealAcceptBtn.click();
     }
     /**

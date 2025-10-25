@@ -3,20 +3,20 @@ import { Locator, Page } from "@playwright/test";
 export class HolidaysPage{
     readonly contBtn:Locator;
     readonly page:Page;
+    //readonly hotel:Locator;
 
     constructor(page:Page){
         this.page=page;
         this.contBtn=page.getByRole('button', { name: /^continue$/i });
-        // page.locator('.ResultListItemV2__buttonWrapper').getByRole('button', { name: /^continue$/i })
-        //page.getByRole('button', { name: /^continue$/i });
-        //page.getByTestId('continue-button').locator('button');
+        //this.hotel=page.getByTestId('search-results-list').filter({hasText:/Best Western Plus Amedia Art Salzburg/}).getByTestId('continue-button');
+        
 
     }
 
-    async clickOnAnyHotel(){
-      //  await this.contBtn.waitFor({ state: 'visible' });
-        await this.contBtn.click();
-    }
+async clickOnContinue(){
+    await this.contBtn.click();
+}
+
 
     
 }
