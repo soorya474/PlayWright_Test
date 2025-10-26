@@ -12,7 +12,7 @@ export class HomePage {
     readonly selDate: Locator;
     readonly selPersonsBox: Locator;
     readonly incrementChild: Locator;
-    readonly dealAcceptBtn:Locator;
+    readonly dealAcceptBtn: Locator;
     readonly childAge: Locator;
     readonly searchBtn: Locator
 
@@ -22,7 +22,7 @@ export class HomePage {
         this.cookiesAcceptBtn = page.getByRole('button', { name: /accept|agree|allow all/i });
         this.departureAirportTxtBox = page.getByTestId("input_departure-airport");
         this.airportList = page.locator("#airport-list-primary").filter({ has: page.locator('[aria-disabled="false"]') });
-        this.destinationTxtBox =page.getByTestId("inputIcon_destinations");// page.locator("button[data-testid='inputIcon_destinations']");
+        this.destinationTxtBox = page.getByTestId("inputIcon_destinations");// page.locator("button[data-testid='inputIcon_destinations']");
         this.availablePlaces = page.locator("span[aria-disabled='false']");
         this.departureDateTxtBox = page.getByTestId("input_departure-date");
         this.selDate = page.locator("[class='day available']");
@@ -30,14 +30,14 @@ export class HomePage {
         this.incrementChild = page.locator("button[aria-label='nonAdults plus']");
         this.childAge = page.locator("#child-age");
         this.searchBtn = page.getByTestId("search-button")
-        this.dealAcceptBtn=page.getByRole('button',{name:'ALLOW'});
+        this.dealAcceptBtn = page.getByRole('button', { name: 'ALLOW' });
     }
     /**
      * 
      * Navigates to home page
      */
 
-    async navigateToHomePage(){
+    async navigateToHomePage() {
         await this.page.goto("https://www.tui.co.uk/");
     }
     /**
@@ -52,7 +52,7 @@ export class HomePage {
      * This method selects any available airport
      */
     async selectDepartureAirport() {
-        
+
         await this.departureAirportTxtBox.click();
         await this.airportList.waitFor({ state: 'visible' });
         await this.airportList.first().click();
@@ -64,7 +64,7 @@ export class HomePage {
     async selectDestination() {
         await this.destinationTxtBox.click();
         await this.availablePlaces.first().click();
-        const destination=await this.destinationTxtBox.getAttribute('placeholder');
+        const destination = await this.destinationTxtBox.getAttribute('placeholder');
         console.log("Selected Destination:", destination);
     }
     /**
@@ -86,10 +86,10 @@ export class HomePage {
         console.log("Selected Persons:", selPersons);
 
     }
-    async clickOnAllowDeals(){
+    async clickOnAllowDeals() {
         if (await this.dealAcceptBtn.isVisible()) {
-        await this.dealAcceptBtn.click();
-        console.log("Deals popup is handled")
+            await this.dealAcceptBtn.click();
+            console.log("Deals popup is handled")
         }
     }
     /**
@@ -100,7 +100,7 @@ export class HomePage {
     async selectChildAge(age: string) {
         await this.childAge.selectOption(age);
         const selAge = await this.childAge.inputValue();
-        console.log("Selceted child age is"+selAge);
+        console.log("Selceted child age is" + selAge);
 
 
     }
