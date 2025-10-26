@@ -64,7 +64,8 @@ export class HomePage {
     async selectDestination() {
         await this.destinationTxtBox.click();
         await this.availablePlaces.first().click();
-
+        const destination=await this.destinationTxtBox.getAttribute('placeholder');
+        console.log("Selected Destination:", destination);
     }
     /**
      * This method selects any available departuredate
@@ -72,6 +73,8 @@ export class HomePage {
     async selDepartureDate() {
         await this.departureDateTxtBox.click();
         await this.selDate.first().click();
+        const selectedDate = await this.departureDateTxtBox.getAttribute('placeholder');
+        console.log("Selected Departure Date:", selectedDate);
     }
     /**
      * This method selects number of persons
@@ -79,6 +82,8 @@ export class HomePage {
     async selNoOfPersons() {
         await this.selPersonsBox.click();
         await this.incrementChild.click();
+        const selPersons = await this.selPersonsBox.getAttribute('placeholder');
+        console.log("Selected Persons:", selPersons);
 
     }
     async clickOnAllowDeals(){
@@ -92,6 +97,9 @@ export class HomePage {
      */
     async selectChildAge(age: string) {
         await this.childAge.selectOption(age);
+        const selAge = await this.childAge.inputValue();
+        console.log("Selceted child age is"+selAge);
+
 
     }
 
