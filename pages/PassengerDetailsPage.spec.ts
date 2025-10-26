@@ -51,6 +51,12 @@ export class PassengerDetails {
         this.continuePayBtn = page.locator("//button[contains(text(),'Continue To Payment')]");
         this.infoCheckBox = page.locator('.ImportantInformation__content').filter({ has: page.locator('input[type="checkbox"]') });
     }
+    /**
+     * Method eneters the passenger details
+     * @param firstname 
+     * @param lastname 
+     * @param title 
+     */
 
     async enterPassengerNameDetails(firstname: string, lastname: string, title: string) {
         await this.titleDropDwn.selectOption(title);
@@ -58,6 +64,12 @@ export class PassengerDetails {
         await this.lastName.fill(lastname);
 
     }
+    /**
+     * Method enters DOB details
+     * @param day 
+     * @param month 
+     * @param year 
+     */
 
     async enterDOBDetails(day: string, month: string, year: string) {
         await this.dobDay.fill(day);
@@ -65,18 +77,30 @@ export class PassengerDetails {
         await this.dobYear.fill(year);
 
     }
+    /**
+     * Method selects the country
+     * @param country 
+     */
     async selectCountry(country: string) {
         await this.selCountry.fill(country);
 
     }
+    /**
+     * Method to click on continue
+     */
 
     async clickOnContinuePay() {
         await this.continuePayBtn.click();
     }
+    /**
+     * Clicks on checkbox
+     */
     async clickOnCheckBox() {
         await this.infoCheckBox.check();
     }
-
+    /**
+     * Validates the presence of errormesssage
+     */
     async valErrorMsgIsPresent() {
 
         const errorMsgs = [this.leadtitleErrorMsg, this.firstNameErrorMsg, this.lastNameErrorMsg, this.dobErrorMsg, this.addresErrorMsg, this.phoneErrorMsg, this.emailErrorMsg, this.titleErrorMsg, this.fNameErrorMsg, this.lNameErrorMsg]

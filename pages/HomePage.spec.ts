@@ -87,8 +87,10 @@ export class HomePage {
 
     }
     async clickOnAllowDeals(){
-        this.page.pause()
+        if (await this.dealAcceptBtn.isVisible()) {
         await this.dealAcceptBtn.click();
+        console.log("Deals popup is handled")
+        }
     }
     /**
      * 
@@ -102,6 +104,9 @@ export class HomePage {
 
 
     }
+    /**
+     * This method clicks on search
+     */
 
     async clickOnSearchBtn() {
         await this.searchBtn.click();
