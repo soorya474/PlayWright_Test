@@ -105,7 +105,8 @@ export class PassengerDetails {
 
         const errorMsgs = [this.leadtitleErrorMsg, this.firstNameErrorMsg, this.lastNameErrorMsg, this.dobErrorMsg, this.addresErrorMsg, this.phoneErrorMsg, this.emailErrorMsg, this.titleErrorMsg, this.fNameErrorMsg, this.lNameErrorMsg]
         for (const errors of errorMsgs)
-            await expect(errors).toBeVisible();
+        await expect(errors).toBeVisible();
+
 
     }
 

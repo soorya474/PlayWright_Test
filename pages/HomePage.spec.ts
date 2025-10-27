@@ -62,6 +62,7 @@ export class HomePage {
      * This method selects any destination
      */
     async selectDestination() {
+        await this.destinationTxtBox.waitFor({ state: 'visible' })
         await this.destinationTxtBox.click();
         await this.availablePlaces.first().click();
         const destination = await this.destinationTxtBox.getAttribute('placeholder');
@@ -71,6 +72,7 @@ export class HomePage {
      * This method selects any available departuredate
      */
     async selDepartureDate() {
+        await this.departureDateTxtBox.waitFor({ state: 'visible' })
         await this.departureDateTxtBox.click();
         await this.selDate.first().click();
         const selectedDate = await this.departureDateTxtBox.getAttribute('placeholder');

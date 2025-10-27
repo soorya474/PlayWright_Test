@@ -11,6 +11,7 @@ export class HotelPage {
     }
 
     async clickOnContinueBtn() {
+        await this.continueBtn.waitFor({ state: 'visible' });
         await this.continueBtn.click();
     }
 }

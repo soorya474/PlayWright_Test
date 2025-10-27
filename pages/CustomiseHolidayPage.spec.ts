@@ -15,6 +15,7 @@ export class CustomiseHolidaysPage {
      */
 
     async clickOnContinueDetails() {
+        await this.continueDetailsBtn.waitFor({ state: 'visible' });
         await this.continueDetailsBtn.click();
     }
 }
